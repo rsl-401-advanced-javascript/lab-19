@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage --verbose --detectOpenHandles",
+    "start": "node .",
+    "watch": "nodemon .",
+    "lint": "eslint"
   },
   "keywords": [],
   "author": "",
@@ -16,8 +19,8 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "@nmq/q": "^1.0.3",
     "express": "^4.17.1",
-    "pg": "^7.11.0",
-    "superagent": "^5.1.0"
+    "socket.io": "^2.2.0"
   }
 }
