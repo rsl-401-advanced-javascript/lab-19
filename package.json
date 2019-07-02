@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage --verbose --detectOpenHandles",
-    "watch": "nodemon api-server/index.js",
+    "start": "node .",
+    "watch": "nodemon .",
     "lint": "eslint"
   },
   "keywords": [],
@@ -18,6 +19,8 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "@nmq/q": "^1.0.3",
+    "express": "^4.17.1",
     "socket.io": "^2.2.0"
   }
 }

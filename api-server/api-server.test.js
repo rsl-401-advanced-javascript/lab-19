@@ -1,7 +1,9 @@
 'use strict';
 
-describe('this is a placeholder', () => {
-  it('should be true', () => {
-    expect(true).toBe(true);
+const apiServer = require('./index');
+
+describe('The API Server', () => {
+  it('should have a way to start', () => {
+    expect(apiServer.start).toBeDefined();
   });
 });
