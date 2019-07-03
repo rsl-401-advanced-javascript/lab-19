@@ -9,6 +9,7 @@ const fsWriteFile = promisify(fs.writeFile);
 
 const alterFile = async file => {
   try {
+    if (!file) throw Error;
     let data = await fsReadFile(file);
     let text = data.toString().toUpperCase();
     await fsWriteFile(file, Buffer.from(text));
@@ -21,4 +22,4 @@ const alterFile = async file => {
 let file = process.argv.slice(2).shift();
 alterFile(file);
 
-module.exports = alterFile;
+module.exports = { alterFile, Q };
