@@ -3,7 +3,8 @@
 function Client(namespace) {
   this.namespace = namespace;
   this.subscribe = jest.fn();
-  this.publish = jest.fn();
 }
+
+Client.publish = jest.fn();
 
 module.exports = Client;
