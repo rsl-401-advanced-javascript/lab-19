@@ -7,19 +7,19 @@ const Q = require('@nmq/q/client');
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/read', (req, res) => {
-  Q.publish('read', req.query);
+  Q.publish('database', 'read', req.query);
 });
 
 app.post('/create', (req, res) => {
-  Q.publish('create', req.body);
+  Q.publish('database', 'create', req.body);
 });
 
 app.put('/update', (req, res) => {
-  Q.publish('update', req.body);
+  Q.publish('database', 'update', req.body);
 });
 
 app.delete('/delete', (req, res) => {
-  Q.publish('delete', req.body);
+  Q.publish('database', 'delete', req.body);
 });
 
 module.exports = {

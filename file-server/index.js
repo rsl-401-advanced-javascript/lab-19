@@ -13,9 +13,9 @@ const alterFile = async file => {
     let data = await fsReadFile(file);
     let text = data.toString().toUpperCase();
     await fsWriteFile(file, Buffer.from(text));
-    Q.publish('save', `${file} saved!`);
+    Q.publish('files', 'save', `${file} saved!`);
   } catch (error) {
-    Q.publish('error', 'Error in altering file.');
+    Q.publish('files', 'error', 'Error in altering file.');
   }
 };
 
